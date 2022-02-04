@@ -1,0 +1,32 @@
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>eccms</title>
+  </head>
+  <body>
+    <h1>アドレスバーに「?cmd=welc」を付けてください。</h1>
+  </body>
+  <script>
+    var urlParam = location.search.substring(1);
+    
+    if(urlParam) {
+      
+      var param = urlParam.split('&');
+      
+      var paramArray = [];
+      
+      for (i = 0; i < param.length; i++) {
+        var paramItem = param[i].split('=');
+        paramArray[paramItem[0]] = paramItem[1];
+      }
+      
+      if (paramArray.cmd == 'welc') {
+        $('.param').append('<p>ECCMSへようこそ。「?cmd=value」のValueにコマンドを入力</p>');
+      } else if (paramArray.cmd == 'show') {
+        $('.param').append('<p>ECCMSへようこそ。「?cmd=value」のValueにコマンドを入力</p>');
+      }
+      
+    }
+  </script>
+</html>
